@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+  <classPathEntry  location="F:\work\ifpay_core\customer\src\main\resources\lib\ojdbc6.jar"/>
+
+  <context id="IsmpTables" targetRuntime="MyBatis3" defaultModelType="flat">
+
+    <!-- 生成的Java文件的编码 -->
+    <property name="javaFileEncoding" value="UTF-8"/>
+
+    <property name="mergeable" value="false"></property>
+
+    <plugin type="com.ftvalue.generator.MapperAnnotationPlugin" />
+    <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+    <plugin type="com.ftvalue.generator.BatchInsertPlugin" />
+
+    <commentGenerator>
+      <property name="suppressDate" value="true"/>
+    </commentGenerator>
+
+    <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+                    connectionURL="jdbc:oracle:thin:@114.215.188.208:1521:paydb"
+                    userId="ismp"
+                    password="ismp">
+    </jdbcConnection>
+
+    <!-- targetProject:自动生成代码的位置 -->
+    <javaModelGenerator targetPackage="com.ftvalue.customer.repository.model"
+                        targetProject="F:/work/ifpay_core/customer/src/main/java">
+      <!-- enableSubPackages:是否让schema作为包的后缀 -->
+      <property name="enableSubPackages" value="true" />
+      <!-- 从数据库返回的值被清理前后的空格  -->
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="mapper"  targetProject="F:/work/ifpay_core/customer/src/main/resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+      <!--ANNOTATEDMAPPER/XMLMAPPER-->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ftvalue.customer.repository.mapper"
+                         targetProject="F:/work/ifpay_core/customer/src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <!-- tableName:用于自动生成代码的数据库表；domainObjectName:对应于数据库表的javaBean类名 -->
+    <!--<table tableName="tb_agentpay_log" domainObjectName="TbAgentpayLog"-->
+           <!--enableCountByExample="false" enableUpdateByExample="false"-->
+           <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+           <!--selectByExampleQueryId="false">-->
+      <!--<generatedKey column="LOG_ID" sqlStatement="select SEQ_TB_ERRORLOG.nextval from dual"/>-->
+    <!--</table>-->
+
+    <!--<table tableName="TB_AGENTPAY_INFO" domainObjectName="TbAgentpayInfo"-->
+           <!--enableCountByExample="false" enableUpdateByExample="false"-->
+           <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+           <!--selectByExampleQueryId="false">-->
+    <!--</table>-->
+
+    <!--<table tableName="bo_acquirer_account" domainObjectName="BoAcquirerAccount"-->
+      <!--enableCountByExample="false" enableUpdateByExample="false"-->
+      <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+      <!--selectByExampleQueryId="false">-->
+      <!--<generatedKey column="id" sqlStatement="select seq_bo_acquireraccount.nextval from dual"/>-->
+    <!--</table>-->
+
+    <!--<table tableName="bo_system_properties" domainObjectName="BoSystemProperties"-->
+        <!--enableUpdateByExample="false"-->
+      <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+        <!--selectByExampleQueryId="false">-->
+    <!--</table>-->
+
+    <!--<table tableName="mapi_async_notify" domainObjectName="AsyncNotify"-->
+           <!--enableUpdateByExample="false"-->
+           <!--enableDeleteByExample="false" enableSelectByExample="true"-->
+           <!--selectByExampleQueryId="false">-->
+    <!--</table>-->
+
+    <table tableName="trade_account_command_saf" domainObjectName="AccountCommandSaf"
+           enableUpdateByExample="false"
+           enableDeleteByExample="false" enableSelectByExample="true"
+           selectByExampleQueryId="false">
+    </table>
+
+  </context>
+
+</generatorConfiguration>

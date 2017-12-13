@@ -1,0 +1,5 @@
+activemq:
+    broker-url: failover://tcp://106.15.195.17:61617
+
+
+compile 'org.springframework.boot:spring-boot-starter-activemq'

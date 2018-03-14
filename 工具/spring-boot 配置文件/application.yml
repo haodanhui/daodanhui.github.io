@@ -121,7 +121,6 @@ rest:
     connect-timeout: 10000
     read-timeout: 10000
 
-templateNo: M005
 
 #控制添加角色数量
 role_Num: 6
